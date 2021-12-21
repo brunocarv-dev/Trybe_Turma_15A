@@ -16,21 +16,31 @@ class GreatGrandfather extends Component {
   }
 
   render() {
+    const { inheritance } = this.state
     return (
-      <Grandmother inheritance={this.state.inheritance} />
+      <Grandmother
+        inheritance={inheritance}
+        spendInheritance={this.spendInheritance}  
+      />
       );
   }
 }
 
 function Grandmother(props) {
   return(
-    <Father inheritance={props.inheritance} />
+    <Father 
+      inheritance={props.inheritance}
+      spendInheritance={props.spendInheritance}  
+    />
   );
 }
 
 function Father(props) {
   return(
-    <Daughter inheritance={props.inheritance}
+    <Daughter
+      inheritance={props.inheritance}
+      spendInheritance={props.spendInheritance}
+    />
   );
 }
 
@@ -40,8 +50,11 @@ function Daughter(props) {
       <span>
       {`Tenho uma herança de R$ ${props.inheritance} que recebi do meu bisavô`}
       </span>
+      <button type="button" onClick={props.spendInheritance}>
+        Gastar Herança!
+      </button>
     </div>
-  )
+  );
 }
 
 export default GreatGrandfather;
