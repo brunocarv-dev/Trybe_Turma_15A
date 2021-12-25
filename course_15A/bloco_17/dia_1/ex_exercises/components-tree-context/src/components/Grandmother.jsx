@@ -7,7 +7,7 @@ class Grandmother extends Component {
     return (
       <div>
         <h2>Eu sou a vó</h2>
-        <Father money={this.props.money} handleSpendMoney={this.props.handleSpendMoney} />
+        <Father />
       </div>
     );
   }
