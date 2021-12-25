@@ -7,13 +7,21 @@ class GreatGranmother extends Component {
     this.state={
       money: 1000000,
     }
+    this.handleSpendMoney = this.handleSpendMoney.bind(this);
   }
+
+  handleSpendMoney(){
+    this.setState((prevState) => ({
+      money: prevState.money - 100,
+    }))
+  }
+
   render() {
 
     return (
       <div>
         <h1>Eu sou a bisavó</h1>
-        <Grandmother money={this.state.money} />
+        <Grandmother money={this.state.money} handleSpendMoney={this.handleSpendMoney} />
       </div>
     );
   }

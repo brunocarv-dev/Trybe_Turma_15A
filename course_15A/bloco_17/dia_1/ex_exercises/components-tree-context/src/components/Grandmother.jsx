@@ -3,11 +3,11 @@ import Father from './Father'
 
 class Grandmother extends Component {
 
-  render() {
+  render(props) {
     return (
       <div>
         <h2>Eu sou a vó</h2>
-        <Father money={this.props.money} />
+        <Father money={this.props.money} handleSpendMoney={this.props.handleSpendMoney} />
       </div>
     );
   }
