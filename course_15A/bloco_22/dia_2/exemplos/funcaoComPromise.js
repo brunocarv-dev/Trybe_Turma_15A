@@ -1,15 +1,13 @@
-function calcularDivisao(num1, num2) {
+function calculaDivisao(num1, num2) {
   const promise = new Promise((resolve, reject) => {
-    if(num2 == 0) reject(new Error("Não se pode dividir um número por zero"));
+    if( num2 == 0 ) reject(new Error('Não se pode dividir por zero'))
 
     const resultado = num1 / num2;
 
-    resolve(resultado);
-  });
+    return resolve(resultado);
+  })
 
   return promise;
-};
+}
 
-calcularDivisao(2, 0)
-.then((result) => console.log(result))
-.catch((e) => console.log("erro: %s", e.message));
+calculaDivisao(2, 1).then((resolve) => console.log(resolve)).catch(error => console.log(error.message))

@@ -1,15 +1,14 @@
-function calcularDivisao(num1, num2) {
-  if (num2 == 0) throw new Error('Não pode ser feita uma divisão por zero!');
+function calculaDivisao(num1, num2) {
+  if( num2 === 0 ) throw new Error("Não se pode dividir por zero") 
 
-  const resultado = num1 / num2;
+  const resultado = num1 / num2
 
   return resultado;
-}
-
-try {
-  const resultado = calcularDivisao(2, 0) 
-  console.log("resultado: %s", resultado);
-} catch(e) {
-  console.log("erro: %s", e.message);
 };
 
+try {
+  const resultado = calculaDivisao(2, 0);
+  console.log('resultado:', resultado)
+} catch (e) {
+  console.log(e.message)
+};
