@@ -13,8 +13,6 @@ const funcPromise = async (num1, num2, num3) => {
   return promise;
 };
 
-funcPromise('a', 2, 3)
-  .then((result) => console.log('Sucesso:', {result}))
-  .catch((err) => console.log(err.message))
+const value = 5;
 
-
+module.exports = {value, funcPromise};
