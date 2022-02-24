@@ -16,6 +16,7 @@
     "express-rescue": "^1.1.31"
   },
   "devDependencies": {
+    "axios": "^0.26.0",
     "nodemon": "^2.0.15"
   }
 }

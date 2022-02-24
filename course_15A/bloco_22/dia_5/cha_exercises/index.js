@@ -1,8 +1,8 @@
 const PORT = 3001
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRouter = require('./router/userRouter');
-const error500 = require('./middlewaresError');
+const { userRouter, btcRouter } = require('./router');
+const { error500, genericError } = require('./middlewaresError');
 
 const app = express();
 
@@ -12,9 +12,12 @@ app.use(bodyParser.json());
 
 app.use('/user', userRouter);
 
+app.use('/btc', btcRouter);
+
+app.use(genericError);
+
 app.use(error500);
 
-app.all('*', (req, res) => res.status(404).json({ message: 'Page not found' }));
-
+app.all('*', (_req, res) => res.status(404).json({ message: 'Page not found' }));
 
 app.listen(PORT, () => console.log('App escutando na porta:', PORT));
