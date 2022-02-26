@@ -1,0 +1,23 @@
+{
+  "name": "sd-015-a-live-lectures",
+  "version": "1.0.0",
+  "description": "Este repositório armazena os códigos e scripts fornecidos durante as aulas ao vivo pelos especialistas da Trybe.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tryber/sd-015-a-live-lectures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tryber/sd-015-a-live-lectures/issues"
+  },
+  "homepage": "https://github.com/tryber/sd-015-a-live-lectures#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}

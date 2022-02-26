@@ -1,0 +1,1 @@
+const hof = (param, callBack) => {}lx

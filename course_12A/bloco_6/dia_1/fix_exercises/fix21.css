@@ -1,0 +1,17 @@
+#pageTitle {
+    text-align: center;
+}
+
+.informationBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.informationBlock {
+    width: 100px;
+    height: 200px;
+}
+
+

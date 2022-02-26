@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-dist/css/bootstrap-grid.min.css">
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro de Currículo</h1>
+    </header>
+    <br>
+    <br>
+    <form>
+        <fieldset>
+            <label for="name">Nome:
+                <input id="name" type="text" name="Texto" maxlength="40" required>
+            </label>
+            <br>
+            <br>
+            <label for="email">Email:
+                <input id="email" type="text" name="E-mail" maxlength="50" required>
+            </label>
+            <br>
+            <br>
+            <label for="cpf">CPF:
+                <input id="cpf" type="text" name="CPF" maxlength="11" required>
+            </label>
+            <br>
+            <br>
+            <label for="end">Endereço:
+                <input id="end" type="text" name="Endereço" maxlength="200" required>
+            </label>
+            <br>
+            <br>
+            <label for="city">Cidade:
+                <input id="city" type="text" name="Cidade" maxlength="28" required>
+            </label>
+            <br>
+            <br>
+            <label for="est">Estado:
+                <select id="est" type="text" name="Estado" required></select>
+            </label>
+
+            <br>
+
+            <label for="type1">Tipo:
+                <input id="type1" class="tipe" type="radio" name="Logradouro" required>
+                <option class="tipe">Casa</option>
+            </label>
+            <label for="type2">
+                <input id="type2" class="tipe" type="radio" name="Logradouro" required>
+                <option class="tipe">Apartamento</option>
+            </label>
+        </fieldset>
+
+        <br>
+        <br>
+
+        <fieldset>
+            <label for="resCurric">Resumo do currículo:
+                <textarea class="formacao" maxlength="1000" required></textarea>
+            </label>
+            <br>
+            <label for=""cargo> Cargo:
+                <textarea class="formacao" maxlength="40" required></textarea>
+            </label>
+            <br>
+            <label for="desCarg"> Descrição do cargo:
+                <textarea class="formacao" maxlength="500" required></textarea>
+            </label>
+            <br>
+            <label for="beginDate"> Data de início:
+                <input class="formacao"  type="date" required>
+            </label>
+        </fieldset>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <button type="submit" id="inviteForm">Enviar formulário</button>
+        <button type="reset" id="limpar">Limpar</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>

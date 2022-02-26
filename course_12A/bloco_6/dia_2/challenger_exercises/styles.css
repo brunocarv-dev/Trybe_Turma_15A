@@ -1,0 +1,36 @@
+header {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tipe {
+    display: inline-block
+}
+
+#est {
+    display: block;
+}
+
+.formacao{
+    display: block
+}
+
+#inviteForm{
+    margin-left: 40%;
+    margin-bottom: 20px;
+    background-color: rgb(101, 182, 94);
+}
+
+#limpar{
+    margin-left: 100px;
+    background-color:rgb(228, 88, 88);
+    margin-bottom: 20px;
+}
+
+form{
+    background-color: pink;
+}
+
+body{
+    background-color: pink;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro de Currículo</h1>
+    </header>
+    <br>
+    <br>
+    <fieldset>
+    <form> 
+        <label for="name">Nome:
+            <input id="name" type="text" name="Texto" maxlength="40" required>
+        </label>
+        <br>
+        <br>
+        <label for="email">Email:
+            <input id="email" type="text" name="E-mail" maxlength="50" required>
+        </label>
+        <br>
+        <br>
+        <label for="cpf">CPF:
+            <input id="cpf" type="text" name="CPF" maxlength="11" required>
+        </label>
+        <br>
+        <br>
+        <label for="end">Endereço:
+            <input id="end" type="text" name="Endereço" maxlength="200" required>
+        </label>
+        <br>
+        <br>
+        <label for="city">Cidade:
+            <input id="city" type="text" name="Cidade" maxlength="28" required>
+        </label>
+        <br>
+        <br>
+        <label for="est">Estado:
+            <select id="est" type="text" name="Estado" required>
+        
+        </label>
+        <br>
+        <br>
+        <label class="tipe" for="type1">Tipo:
+            <br>
+            <input id="type1" type="radio" name="Logradouro" required>
+            <option>Casa</option>
+        </label>
+        <label class="tipe" for="type2">
+            <input id="type2" type="radio" name="Logradouro" required>
+            <option>Apartamento</option>
+        </label>
+        <br>
+        <br>
+        <br>
+        <br>        
+        <button type="submit">Enviar formulário</button>
+    </form>
+    </fieldset>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
