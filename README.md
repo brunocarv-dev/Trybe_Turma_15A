@@ -1,0 +1,1 @@
+ Este repositório integra os arquivos e diretórios dos antigos repositórios do meu curso na Trybe. Logo, course_12A, course_13A e course_15A referem-se ao conteúdo praticado por mim ao longo das sessões de estudo.
