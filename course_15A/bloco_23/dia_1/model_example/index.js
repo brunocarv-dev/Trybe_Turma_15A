@@ -28,8 +28,7 @@ app.get('/books', async (req, res) => {
     res.status(200).json(books);   
 })
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 app.listen(PORT, () => {
     console.log(`Ouvindo a porta ${PORT}`);
 });
-//
