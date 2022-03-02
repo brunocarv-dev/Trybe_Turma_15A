@@ -1,7 +1,7 @@
 const connection = require('./Connection');
 
 const getAllBooks = async () => {
-  const [books] = await connection.execute('SELECT id, title, author_id FROM model_example.books',);
+  const [books] = await connection.execute('SELECT id, title, author_id FROM model_example.books', );
   return books;
 };
 
@@ -14,7 +14,7 @@ const getId = async (id) => {
   const query = 'SELECT id, title, author_id FROM model_example.books WHERE books.id = ?';
 
   const [book] = await connection.execute(query, [id]);
-  
+
   return book;
 };
 
