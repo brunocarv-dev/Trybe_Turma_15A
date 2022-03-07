@@ -18,6 +18,14 @@ module.exports = (err, _req, res, _next) => {
           "message": "CEP já existente"
         }
       });
+
+    case 404:
+      return res.status(err).json({
+        "error": {
+          "code": "notFound",
+          "message": "CEP não encontrado"
+        }
+      });
     
     case 400:
       return res.status(err).json({

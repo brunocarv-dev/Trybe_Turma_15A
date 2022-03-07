@@ -10,33 +10,18 @@ const isValidCep = (cep) => {
   return true;
 };  
 
-const getByCep = rescue(async (req, res, _next) => {
+const getByCep = rescue(async (req, res, next) => {
   const { cep } = req.params;  
 
-  if (!isValidCep(cep)) return { code: 400 };
+  if (!isValidCep(cep)) return next(400);
 
-  objectIsValid = await Services.cepById(cep);
+  resultRequest = await Services.cepById(cep);
 
-  switch (objectIsValid.code) {
-    case 400:
-      return res.status(objectIsValid.code).json({
-        "error": { 
-          "code": "invalidData",
-          "message": "CEP inválido" 
-        }
-      });
+  console.log(resultRequest);
 
-    case 404:
-      return res.status(objectIsValid.code).json({
-        "error": {
-          "code": "notFound",
-          "message": "CEP não encontrado"
-        }
-      })
-      
-    case 200:
-      return res.status(objectIsValid.code).json(objectIsValid.result);
-  };
+  if (resultRequest.error) return next(resultRequest.error);
+
+  return res.status(resultRequest.code).json(resultRequest.result);
 });
 
 const createCep = async (req, res, next) => {
