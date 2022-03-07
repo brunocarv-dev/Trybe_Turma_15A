@@ -1,30 +1,18 @@
-const Cep = require('../models/Cep');
-
-const isValidCep = (cep) => {
-  const regex = /\d{5}-?\d{3}/; 
-
-  if (!regex.test(cep)) return false;
-
-  return true;
-};
+const Models = require('../models/Cep');
 
 const cepById = async (cep) => {
-  if (!isValidCep(cep)) return { code: 400 };
-  
-  const checkedCep = await Cep.cepById(cep);
+  const checkedCep = await Models.cepById(cep);
 
-  if (!checkedCep) return { code: 404 };
+  if (!checkedCep) return { error: 404 };
 
   return { code: 200, result: checkedCep}
 
 };
 
 const createCep = async (cep, logradouro, bairro, localidade, uf) => {
-  if (!isValidCep(cep)) return { code: 400 };
+  const checkCreatedCep = await Models.createCep(cep, logradouro, bairro, localidade, uf);
 
-  const checkCreatedCep = await Cep.createCep(cep, logradouro, bairro, localidade, uf);
-
-  if (!checkCreatedCep) return { code: 409 };
+  if (!checkCreatedCep) return { error: 409 };
 
   return { code: 201, result: checkCreatedCep };
 };

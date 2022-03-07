@@ -1,10 +1,21 @@
 const Joi = require('joi');
-const Cep = require('../services/Cep');
+const Services = require('../services/Cep');
+const rescue = require('express-rescue');
 
-const getByCep = async (req, res, _next) => {
+const isValidCep = (cep) => {
+  const regex = /\d{5}-?\d{3}/; 
+
+  if (!regex.test(cep)) return false;
+
+  return true;
+};  
+
+const getByCep = rescue(async (req, res, _next) => {
   const { cep } = req.params;  
 
-  objectIsValid = await Cep.cepById(cep);
+  if (!isValidCep(cep)) return { code: 400 };
+
+  objectIsValid = await Services.cepById(cep);
 
   switch (objectIsValid.code) {
     case 400:
@@ -26,10 +37,12 @@ const getByCep = async (req, res, _next) => {
     case 200:
       return res.status(objectIsValid.code).json(objectIsValid.result);
   };
-};
+});
 
 const createCep = async (req, res, next) => {
   const { cep, logradouro, bairro, localidade, uf } = req.body;
+
+  if (!isValidCep(cep)) return next(400);
 
   const { error } = Joi.object({
     cep: Joi.string().not().empty().required(),
@@ -41,28 +54,11 @@ const createCep = async (req, res, next) => {
   
   if (error) return next(error);
 
-  const newCep = await Cep.createCep(cep, logradouro, bairro, localidade, uf);
+  const newCep = await Services.createCep(cep, logradouro, bairro, localidade, uf);
 
-  switch (newCep.code) {
-    case 400:
-      return res.status(newCep.code).json({
-        "error": {
-          "code": "invalidData",
-          "message": "<mensagem do Joi>"
-        }
-      });
-
-    case 409:
-      return res.status(newCep.code).json({
-        "error": {
-          "code": "alreadyExists",
-          "message": "CEP já existente"
-        }
-      });
-
-    case 201:
-      return res.status(newCep.code).json(newCep.result);
-  }
+  if (newCep.error) return next(newCep.error);
+    
+  return res.status(newCep.code).json(newCep.result);
 }
 
 module.exports = { 

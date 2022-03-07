@@ -1,6 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const errorController = require('./controllers/ErrorController');
 const pingRoute = require('./routes/pingRoute');
 const cepRoute = require('./routes/cepRoute');
 
@@ -12,6 +14,8 @@ app.use('/ping', pingRoute);
 
 app.use('/cep', cepRoute);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
-app.listen(PORT, () => console.log('Aplicação escutando na porta:', '3000'))
+app.use(errorController);
+
+app.listen(PORT, () => console.log('Aplicação escutando na porta:', PORT))
