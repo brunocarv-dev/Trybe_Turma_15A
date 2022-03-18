@@ -1,12 +1,12 @@
-const { DataTypes } = require("sequelize/types");
-
-const Book = (sequelize, Datatypes) => {
+const Book = (sequelize, DataTypes) => {
   const Book = sequelize.define("Book", {
-    id:Datatypes.INTEGER,
-    title: Datatypes.STRING,
+    title: DataTypes.STRING,
     author: DataTypes.STRING,
     pageQuantity: DataTypes.INTEGER,
-    createdAt: DataTypes.DATE,
+    createdDate: DataTypes.DATE,
+  }, {
+    tableName: "Biblioteca",
+    timestamps: false,
   });
   
   return Book;

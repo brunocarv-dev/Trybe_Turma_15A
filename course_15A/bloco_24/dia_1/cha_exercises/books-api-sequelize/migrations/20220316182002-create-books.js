@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('Books', {
+    await queryInterface.createTable('Biblioteca', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -21,9 +21,10 @@ module.exports = {
         allowNull: true,
         type: Sequelize.INTEGER
       },
-      createdAt: {
+      createdDate: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("NOW")
       },
     });
   },
