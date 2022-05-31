@@ -66,10 +66,22 @@ export default class Car {
   }
 };
 
-const ferrari = new Car('Ferrari', Colors.VERMELHA, 2);
-ferrari.openTheDoor(AbrePorta.ABRE);
-ferrari.closeTheDoor(FechaPorta.FECHA);
-ferrari.speedUp();
-ferrari.speedDown();
-ferrari.turn(Direcao.ESQUERDA);
-ferrari.speedUp();
+const gol = new Car('Volkswagen', Colors.VERMELHA, 2);
+gol.openTheDoor(AbrePorta.ABRE);
+gol.closeTheDoor(FechaPorta.FECHA);
+gol.speedUp();
+gol.turn(Direcao.ESQUERDA);
+gol.turn(Direcao.DIREITA);
+gol.turn(Direcao.DIREITA);
+gol.turn(Direcao.DIREITA);
+gol.speedDown();
+gol.stop();
+gol.speedUp();
+gol.turn(Direcao.DIREITA);
+gol.turn(Direcao.DIREITA);
+gol.turn(Direcao.ESQUERDA);
+gol.turn(Direcao.ESQUERDA);
+gol.turn(Direcao.DIREITA);
+gol.turn(Direcao.DIREITA);
+gol.speedDown();
+gol.stop();
