@@ -42,5 +42,12 @@ export default class BookModel {
       .execute('UPDATE books SET title=?, price=?, author=?, isbn WHERE id=?',
       [title, price, author, isbn, id]);
   };
+
+  public async remove(id: number) {
+    await this.connection.execute(
+      'DELETE FROM books WHERE id=?',
+      [id]
+    );
+  }
 }
 

@@ -2,6 +2,7 @@ import connection from '../models/connection';
 import BookModel from '../models/book.model';
 import Book from '../interfaces/book.interfaces';
 import { NotFoundError } from 'restify-errors';
+import { normalize } from 'path';
 
 class BookService {
   public model: BookModel;
@@ -31,6 +32,16 @@ class BookService {
     }
 
     return this.model.update(id, book);
+  }
+
+  public async remove(id: number): Promise<void> {
+    const bookFound = await this.model.getById(id);
+
+    if (!bookFound) {
+      throw new NotFoundError('NotFoundError');
+    }
+
+    this.model.remove(id);
   }
 }
 
