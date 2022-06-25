@@ -36,3 +36,14 @@ const showIdentification = (person) => {
 showIdentification(pp0);
 showIdentification(pp1);
 showIdentification(lp);
+class Contract {
+    constructor(broker) {
+        this.broker = broker;
+    }
+    static get number() { return this._number; }
+}
+Contract._number = 0;
+const c1 = new Contract(pp0);
+console.log(c1.broker.cpf);
+const c2 = new Contract(lp);
+console.log(c2.broker.cnpj);
